@@ -164,6 +164,13 @@ do host $url.$1 | grep "has address"
 done
 ```
 
+## (Opcional) Versão mais robusta
+```bash
+#!/bin/bash
+while IFS= read -r url; do
+  host "$url.$1" | grep "has address"
+done < dominios1.lst
+```
 ---
 
 ## Explicação linha por linha
@@ -285,16 +292,15 @@ mail.host has address 52.20.84.62
 
 ---
 
-## (Opcional) Versão mais robusta
-```bash
-#!/bin/bash
-while IFS= read -r url; do
-  host "$url.$1" | grep "has address"
-done < dominios1.lst
-```
+## Observação sobre IPs
 
+- Um **mesmo domínio** pode ter **múltiplos IPs**, dependendo dos serviços.  
+- Isso acontece porque empresas geralmente **separam serviços críticos** (site, e-mail, painel, etc.) em servidores distintos.  
+- Assim, se um servidor cair, os outros continuam funcionando.
 
-
+Exemplo prático:
+- `www.ufn.edu.br` → 200.132.59.110 (servidor web da universidade)  
+- `mail.ufn.edu.br` → 52.20.84.62 (servidor de e-mail hospedado na Amazon AWS)
 
 
 ---
@@ -316,8 +322,6 @@ Representa permissões para:
 
 Owner (Dono) | Grupo (Group) | Outros (Outros)
 
-
-# Diferenças
 
 # Diferença entre Subdomínios Comuns
 
@@ -346,15 +350,7 @@ Eles podem ou não compartilhar o mesmo **endereço IP**, dependendo da infraest
 
 ---
 
-## Observação sobre IPs
 
-- Um **mesmo domínio** pode ter **múltiplos IPs**, dependendo dos serviços.  
-- Isso acontece porque empresas geralmente **separam serviços críticos** (site, e-mail, painel, etc.) em servidores distintos.  
-- Assim, se um servidor cair, os outros continuam funcionando.
-
-Exemplo prático:
-- `www.ufn.edu.br` → 200.132.59.110 (servidor web da universidade)  
-- `mail.ufn.edu.br` → 52.20.84.62 (servidor de e-mail hospedado na Amazon AWS)
 
 
 
