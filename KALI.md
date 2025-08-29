@@ -147,4 +147,35 @@ ftp
 
 
 ```
+# Comandos de Permissões
+
+1 - Permite executar
+2 - Permite gravar
+3 - Permite leitura
+
+Exemplo:
+
+1 1 1
+
+Representa permissões para:
+
+Owner (Dono) | Grupo (Group) | Outros (Outros)
+
+
+# Perguntas pro chat? 
+
+└─$ ./busca_subdominios.sh ufn.edu.br
+
+> www.ufn.edu.br -> 200.132.59.110
+
+┌──(laboratorio㉿lab24dt01)-[~]
+└─$ ./busca_subdominios.sh host ufn.edu.br
+
+> mail.host has address 52.20.84.62
+
+porque dao diferentes?
+
+
+
+
 
