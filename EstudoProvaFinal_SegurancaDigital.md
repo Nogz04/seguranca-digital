@@ -203,7 +203,9 @@ SET PAYLOAD windows/meterpreter/reverse_tcp
 **Questão 19 -  Cite três formas de descobrir o servidor de DNS de um serviço hospedado na WWW:**
 
 WhoIs
+
 nslookup (nslookup -type=NS dominio.com)
+
 dig (dig NS dominio.com)
 
 # Variáveis para setar nos exploits:
