@@ -208,6 +208,79 @@ nslookup (nslookup -type=NS dominio.com)
 
 dig (dig NS dominio.com)
 
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 20 - O que é NAT (Network Address Translation) e qual a sua função na segurança?**
+
+NAT (Tradução de Endereços de Rede) é um protocolo estudado para compreender endereços válidos e inválidos e como nos "camuflar" para navegar na internet.
+Sua função na segurança é permitir que uma rede privada se comunique com a internet usando um único endereço IP público. Isso atua como uma proteção, pois quem está na internet vê apenas o IP do dispositivo de borda (roteador/firewall/tradutor), e não o IP real das máquinas internas, evitando exposição direta.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 21 - O que é CIDR e qual sua importância na fase de reconhecimento?**
+
+CIDR (*Classless Inter-Domain Routing*) é um conceito utilizado para identificar proprietários de blocos de IP na internet.
+Para um atacante ou pentester, consultar o CIDR é essencial para descobrir a faixa de endereços IP que uma empresa possui. Isso permite mapear a extensão da rede alvo e identificar todos os hosts que podem ser atacados, interpretando os dados para planejar o projeto de invasão.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 22 - Qual a função de um Servidor Proxy em um contexto de invasão?**
+
+O estudo do funcionamento de servidores Proxy é parte fundamental para entender a intermediação de conexões.
+No contexto de segurança ofensiva, ele é frequentemente utilizado para anonimato. Ao passar a conexão por um Proxy, o atacante oculta seu endereço IP real, fazendo com que o servidor de destino registre apenas o IP do Proxy, dificultando a rastreabilidade do ataque.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 23 - O que define os serviços de Sniffing (Escuta de Rede)?**
+
+Baseado na Unidade 3, estes são serviços que permitem "escutar e visualizar o que passa em uma rede".
+O Sniffing consiste em capturar pacotes de dados que trafegam na infraestrutura de rede. Se a comunicação não estiver criptografada, o atacante pode ler o conteúdo sensível. O plano destaca o estudo desses serviços para entender as vulnerabilidades que eles promovem.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 24 - Como os Worms se diferenciam de outros malwares no planejamento de ataques?**
+
+No planejamento de ataques, estuda-se especificamente a criação e uso de Worms.
+A principal diferença é a autonomia: enquanto vírus precisam de um hospedeiro e execução humana, os Worms exploram vulnerabilidades para se replicar automaticamente pela rede. O objetivo pedagógico é planejar o ataque utilizando worms criados com os conhecimentos adquiridos sobre injetores de códigos.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 25 - O que é Balanceamento de Carga e como ele afeta a vazão de dados?**
+
+O balanceamento de carga é o conceito de usar diferentes caminhos para enviar partes da mesma informação.
+Ele permite uma maior vazão de dados sempre que a malha da rede permitir. Para a segurança, entender isso é vital, pois o tráfego pode estar sendo distribuído entre múltiplos servidores, o que afeta como um ataque de negação de serviço ou uma interceptação de dados deve ser planejada.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 26 - Por que conhecer a estrutura de diretórios do Linux é essencial para a segurança?**
+
+O plano de ensino dedica tempo para conhecer o sistema de arquivos, linhas de comando e funcionalidades do Linux, especificamente como se localizar dentro dele.
+Isso é essencial para a pós-exploração. Após invadir um servidor (frequentemente Linux em ambientes corporativos), o profissional precisa saber onde estão os arquivos de configuração de serviços (como servidores Web) e logs para administrar ou comprometer o sistema efetivamente.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 27 - Qual o objetivo do Relatório Final de Invasão na Unidade 4?**
+
+A competência final da disciplina envolve analisar formas de ataques e gerar relatórios que apontem as vulnerabilidades.
+O objetivo é relacionar todo o processo de invasão realizado (coleta de dados, exploits, payloads) para entregar ao contratante. O relatório deve não apenas mostrar que o ataque foi possível, mas documentar as falhas para que o cliente possa corrigi-las.
+
+
 # Variáveis para setar nos exploits:
 
 LHOST: IP do Invasor 
