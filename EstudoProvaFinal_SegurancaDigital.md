@@ -210,75 +210,89 @@ dig (dig NS dominio.com)
 
 ***
 
+***
+
 **Enunciado da Questão - Resposta dela abaixo.**
 
 **Questão 20 - O que é NAT (Network Address Translation) e qual a sua função na segurança?**
 
-NAT (Tradução de Endereços de Rede) é um protocolo estudado para compreender endereços válidos e inválidos e como nos "camuflar" para navegar na internet.
-Sua função na segurança é permitir que uma rede privada se comunique com a internet usando um único endereço IP público. Isso atua como uma proteção, pois quem está na internet vê apenas o IP do dispositivo de borda (roteador/firewall/tradutor), e não o IP real das máquinas internas, evitando exposição direta.
+NAT (Tradução de Endereços de Rede) é um protocolo que permite que uma rede privada (com endereços IP não roteáveis na internet, como 192.168.x.x) se comunique com a internet usando um único endereço IP público (válido). Sua função principal é economizar endereços IPv4, mas ele atua na segurança através da "camuflagem". Quem está na internet vê apenas o IP do roteador/firewall, e não o IP real das máquinas internas, dificultando ataques diretos às estações de trabalho.
 
 ***
 
 **Enunciado da Questão - Resposta dela abaixo.**
 
-**Questão 21 - O que é CIDR e qual sua importância na fase de reconhecimento?**
+**Questão 21 - O que é CIDR e para que serve em uma fase de reconhecimento?**
 
-CIDR (*Classless Inter-Domain Routing*) é um conceito utilizado para identificar proprietários de blocos de IP na internet.
-Para um atacante ou pentester, consultar o CIDR é essencial para descobrir a faixa de endereços IP que uma empresa possui. Isso permite mapear a extensão da rede alvo e identificar todos os hosts que podem ser atacados, interpretando os dados para planejar o projeto de invasão.
-
-***
-
-**Enunciado da Questão - Resposta dela abaixo.**
-
-**Questão 22 - Qual a função de um Servidor Proxy em um contexto de invasão?**
-
-O estudo do funcionamento de servidores Proxy é parte fundamental para entender a intermediação de conexões.
-No contexto de segurança ofensiva, ele é frequentemente utilizado para anonimato. Ao passar a conexão por um Proxy, o atacante oculta seu endereço IP real, fazendo com que o servidor de destino registre apenas o IP do Proxy, dificultando a rastreabilidade do ataque.
+CIDR (Classless Inter-Domain Routing) é um método de alocação de endereços IP e roteamento que substituiu o antigo sistema de classes (A, B, C). Ele utiliza uma notação de sufixo (ex: /24, /16) para indicar quantos bits representam a rede. Em um teste de invasão, entender o CIDR é fundamental para identificar o tamanho da rede alvo (o bloco de IPs) e mapear todos os possíveis hosts ativos pertencentes àquela organização, ampliando a superfície de ataque.
 
 ***
 
 **Enunciado da Questão - Resposta dela abaixo.**
 
-**Questão 23 - O que define os serviços de Sniffing (Escuta de Rede)?**
+**Questão 22 - Como funciona um Servidor Proxy e qual sua relação com o anonimato?**
 
-Baseado na Unidade 3, estes são serviços que permitem "escutar e visualizar o que passa em uma rede".
-O Sniffing consiste em capturar pacotes de dados que trafegam na infraestrutura de rede. Se a comunicação não estiver criptografada, o atacante pode ler o conteúdo sensível. O plano destaca o estudo desses serviços para entender as vulnerabilidades que eles promovem.
-
-***
-
-**Enunciado da Questão - Resposta dela abaixo.**
-
-**Questão 24 - Como os Worms se diferenciam de outros malwares no planejamento de ataques?**
-
-No planejamento de ataques, estuda-se especificamente a criação e uso de Worms.
-A principal diferença é a autonomia: enquanto vírus precisam de um hospedeiro e execução humana, os Worms exploram vulnerabilidades para se replicar automaticamente pela rede. O objetivo pedagógico é planejar o ataque utilizando worms criados com os conhecimentos adquiridos sobre injetores de códigos.
+Um servidor Proxy atua como um intermediário entre o cliente (você) e o servidor de destino (o site que você quer acessar). Em vez de você se conectar diretamente ao site, você pede ao Proxy, e ele busca a informação para você. Para segurança e anonimato, o Proxy é utilizado para ocultar o endereço IP real do atacante ou do usuário, fazendo com que o servidor de destino registre apenas o IP do Proxy nos seus logs de acesso.
 
 ***
 
 **Enunciado da Questão - Resposta dela abaixo.**
 
-**Questão 25 - O que é Balanceamento de Carga e como ele afeta a vazão de dados?**
+**Questão 23 - O que é Sniffing e qual a diferença entre Sniffing Passivo e Ativo?**
 
-O balanceamento de carga é o conceito de usar diferentes caminhos para enviar partes da mesma informação.
-Ele permite uma maior vazão de dados sempre que a malha da rede permitir. Para a segurança, entender isso é vital, pois o tráfego pode estar sendo distribuído entre múltiplos servidores, o que afeta como um ataque de negação de serviço ou uma interceptação de dados deve ser planejada.
+Sniffing é a técnica de interceptar e registrar o tráfego de dados em uma rede (escutar o que passa nos cabos ou no Wi-Fi).
 
-***
+Passivo: Ocorre em redes com Hubs (ou Wi-Fi), onde os dados são enviados para todos. O atacante apenas "escuta" sem alterar o fluxo da rede. É difícil de ser detectado.
 
-**Enunciado da Questão - Resposta dela abaixo.**
-
-**Questão 26 - Por que conhecer a estrutura de diretórios do Linux é essencial para a segurança?**
-
-O plano de ensino dedica tempo para conhecer o sistema de arquivos, linhas de comando e funcionalidades do Linux, especificamente como se localizar dentro dele.
-Isso é essencial para a pós-exploração. Após invadir um servidor (frequentemente Linux em ambientes corporativos), o profissional precisa saber onde estão os arquivos de configuração de serviços (como servidores Web) e logs para administrar ou comprometer o sistema efetivamente.
+Ativo: Ocorre em redes com Switches (que direcionam o tráfego). O atacante precisa injetar tráfego (como no ataque ARP Spoofing) para desviar os dados da vítima para a sua máquina antes de enviá-los ao destino real.
 
 ***
 
 **Enunciado da Questão - Resposta dela abaixo.**
 
-**Questão 27 - Qual o objetivo do Relatório Final de Invasão na Unidade 4?**
+**Questão 24 - Diferencie Vírus de Worm.**
 
-A competência final da disciplina envolve analisar formas de ataques e gerar relatórios que apontem as vulnerabilidades.
-O objetivo é relacionar todo o processo de invasão realizado (coleta de dados, exploits, payloads) para entregar ao contratante. O relatório deve não apenas mostrar que o ataque foi possível, mas documentar as falhas para que o cliente possa corrigi-las.
+Embora ambos sejam malwares, a principal diferença está na propagação:
+
+Vírus: Precisa de um hospedeiro (um arquivo executável ou documento) e da ação humana (o usuário clicar/abrir o arquivo) para se espalhar.
+
+Worm (Verme): É um programa autônomo que explora vulnerabilidades de redes e sistemas para se replicar automaticamente para outros computadores sem precisar de um arquivo hospedeiro ou intervenção do usuário.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 25 - Qual a importância do Relatório Final em um Pentest e o que ele deve conter?**
+
+O relatório é o produto final entregue ao cliente, pois traduz o trabalho técnico em valor de negócio. Ele deve ser dividido geralmente em duas partes:
+
+Sumário Executivo: Linguagem não técnica para gestores/diretores, mostrando os riscos do negócio e o impacto financeiro/operacional das falhas.
+
+Relatório Técnico: Detalha as vulnerabilidades encontradas, as evidências (prints/logs), como reproduzir a falha e, principalmente, as sugestões de correção (mitigação) para a equipe de TI.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 26 - O que é Balanceamento de Carga (Load Balancing)?**
+
+É a técnica de distribuir o tráfego de rede ou de aplicação entre vários servidores. O objetivo é otimizar o uso de recursos, maximizar o rendimento (throughput), minimizar o tempo de resposta e evitar a sobrecarga de um único servidor. Para um atacante, identificar um balanceador de carga é importante pois pode dificultar a exploração de uma sessão específica ou mascarar a estrutura real da rede interna.
+
+***
+
+**Enunciado da Questão - Resposta dela abaixo.**
+
+**Questão 27 - Estrutura básica de diretórios do Linux (Kali). O que encontramos em /etc, /bin e /var?**
+
+Conhecer a estrutura é vital para pós-exploração (quando já se invadiu o sistema):
+
+/etc: Contém arquivos de configuração do sistema (ex: passwd, shadow com hashes de senhas, configurações de rede).
+
+/bin (ou /usr/bin): Contém os binários (executáveis) dos comandos essenciais do sistema (ls, cat, ping).
+
+/var: Contém arquivos variáveis, como logs do sistema (em /var/log), que o invasor geralmente tenta apagar para cobrir seus rastros, e arquivos de sites (geralmente em /var/www/html).
+
+***
 
 
 # Variáveis para setar nos exploits:
